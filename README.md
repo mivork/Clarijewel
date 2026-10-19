@@ -1,6 +1,6 @@
 # Clarijewel
 
-宝石ECサイト。フロントエンドは Next.js（`frontend/`）、バックエンドは Laravel（`backend/`）、DB は MySQL。
+グループワークで制作している宝石ECサイト。フロントエンドは Next.js（`frontend/`）、バックエンドは Laravel（`backend/`）、DB は MySQL。
 
 ## 初回セットアップ（新しいPCで初めて動かすとき）
 
