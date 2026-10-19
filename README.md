@@ -9,7 +9,7 @@
 | ソフト | バージョンの目安 | 用途 |
 |---|---|---|
 | [XAMPP](https://www.apachefriends.org/) | — | MySQL（`C:\xampp` にインストールする） |
-| PHP | 8.3 以上 | Laravel の実行 |
+| PHP | 8.3 以上 | Laravel の実行（XAMPP 付属の PHP 8.0 は古くて動かない。[Laravel Herd](https://herd.laravel.com/) を入れるのが簡単） |
 | [Composer](https://getcomposer.org/) | — | PHP のパッケージ管理 |
 | [Node.js](https://nodejs.org/) | 20 以上 | Next.js の実行 |
 | [Stripe CLI](https://docs.stripe.com/stripe-cli) | — | 決済の Webhook 転送（`winget install Stripe.StripeCli`） |
@@ -46,8 +46,8 @@ copy .env.local.example .env.local
 
 ### 5. Stripe のテスト用キーを設定する
 
-決済を試すには Stripe の**テスト用**キーが必要。キーはチーム内で安全な方法で受け取る
-（GitHub・チャット・メールに貼らない）。
+決済を試すには Stripe の**テスト用**キーが必要。各自で無料の Stripe アカウントを作り、
+テストモードのキーを使うのがおすすめ（キーを GitHub・チャット・メールに貼らない）。
 
 - `backend/.env` の `STRIPE_KEY`（`pk_test_...`）と `STRIPE_SECRET`（`sk_test_...`）
 - `frontend/.env.local` の `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`（`pk_test_...`、`STRIPE_KEY` と同じ値）
