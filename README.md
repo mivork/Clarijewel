@@ -33,8 +33,19 @@ php artisan migrate --seed
 php artisan storage:link
 ```
 
-`--seed` で、ログイン確認用のテストユーザー（`test@example.com` / パスワード `password`）と
-お知らせのサンプルが作成される。
+`--seed` で、お知らせのサンプル、デモ商品8件、次のデモアカウントが作成される
+（パスワードはすべて `password`）。
+
+| メールアドレス | 状態 | 確認できること |
+|---|---|---|
+| `demo-admin@clarijewel.test` | 管理者 | 管理画面のすべての機能 |
+| `demo-gold@clarijewel.test` | ゴールド会員（累計110万円） | 購入履歴（発送済み）、VIP限定商品の閲覧、アフターケア申込（対応中）、レビュー |
+| `demo-silver@clarijewel.test` | シルバー会員（累計44.8万円） | 発送済みの注文と、未発送の注文 |
+| `demo-member@clarijewel.test` | 一般会員 | お気に入り、来店予約、お問い合わせ、未使用の会員登録特典クーポン |
+| `demo-suspended@clarijewel.test` | 利用停止中 | ログインできないこと、管理画面での停止解除 |
+
+ほかに `test@example.com`（パスワード `password`）も作成される。すでにDBがある場合は
+`php artisan db:seed --class=DemoSeeder` でデモデータだけを追加できる。
 
 ### 4. フロントエンドの準備
 
